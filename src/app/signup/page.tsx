@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { useRouter } from "next/navigation";
 import { getBrowserSupabase } from "@/lib/supabase/browser";
 
 function SignUpForm() {
@@ -10,7 +9,6 @@ function SignUpForm() {
   const [sending, setSending] = useState(false);
   const [statusMsg, setStatusMsg] = useState<string>("");
   const [error, setError] = useState<string>("");
-  const router = useRouter();
   const supabase = getBrowserSupabase();
 
   async function onSendCode(e: React.FormEvent) {
