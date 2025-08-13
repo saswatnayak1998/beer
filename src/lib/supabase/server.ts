@@ -12,6 +12,7 @@ function createServerSupabase() {
         get(name: string) {
           return cookieStore.get(name)?.value;
         },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         set(name: string, value: string, options: any) {
           try {
             cookieStore.set(name, value, options);
