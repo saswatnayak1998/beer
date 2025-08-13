@@ -8,9 +8,9 @@ if (!serviceUrl) {
   throw new Error("Missing SUPABASE_URL or NEXT_PUBLIC_SUPABASE_URL for service client");
 }
 
-export function getServiceSupabase(): SupabaseClient<Database> {
-  if (!serviceKey) {
-    throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY for service client");
-  }
-  return createClient<Database>(serviceUrl, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
+export function getServiceSupabase() {
+  if (!serviceKey) throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY for service client");
+  return createClient<Database>(serviceUrl!, serviceKey, {
+    auth: { autoRefreshToken: false, persistSession: false },
+  });
 } 
